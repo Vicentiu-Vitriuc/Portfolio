@@ -1,0 +1,213 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  cursor: crosshair; }
+
+hr {
+  border-top: solid 2px #000000;
+  margin: 0;
+  margin-bottom: 3em; }
+
+  a {
+    text-decoration: none;
+    color: inherit; }
+
+#main-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 0.75em; }
+
+#sidebar {
+  position: relative;
+  height: calc(100vh - 12em);
+  border-right: solid 2px #000000;
+  grid-column: 1/5;
+  padding: 3em; }
+
+.about-me {
+  font-size: 3em;
+  line-height: 1.2em; }
+  .about-me ._word {
+    position: relative;
+    display: inline-block; }
+    .about-me ._word ._static {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #000000;
+      transform: scaleX(1);
+      transform-origin: right;
+      transition: 1s; }
+
+.social {
+  position: absolute;
+  bottom: 2em; }
+  .social ._button {
+    padding: 1em;
+    margin-right: .25em;
+    display: inline-block;
+    background: #ffffff;
+    border: solid 2px #000000;
+    border-radius: 100em;
+    cursor: url(img/look.png), auto; }
+    .social ._button img {
+      display: block;
+      width: 2em;
+      height: 2em; }
+    .social ._button:hover {
+      box-shadow: 6px 6px 12px 0px rgba(0, 0, 0, 0.5);
+      transform: translateY(-2px); }
+
+#content {
+  z-index: 5;
+  height: calc(100vh - 12em);
+  overflow-y: scroll;
+  grid-column: 5/13;
+  padding: 3em; }
+
+#static-spacer {
+  cursor: url(img/pointing-down.png), auto;
+  margin-bottom: 8em;
+  width: 100%;
+  height: 5000px;
+  background: linear-gradient(black, rgba(0, 0, 0, 0)); }
+
+#mobile-only {
+  display: none; }
+
+.website-box {
+  position: relative;
+  margin-bottom: 4em;
+  transition: 0.1s; }
+  .website-box ._title {
+    font-size: 4em;
+    margin-left: 0.2em; }
+  .website-box ._details {
+    font-size: 1.5em;
+    color: #B4B4B4;
+    margin-left: 0.75em;
+    margin-bottom: 1.5em; }
+  .website-box ._view-web,
+  .website-box ._view-code {
+    display: inline-block;
+    padding: .75em 6em;
+    border: solid 3px #000000;
+    border-radius: 10em;
+    font-size: 1.5em;
+    cursor: url(img/look.png), auto; }
+  .website-box ._view-web {
+    margin-right: 1.5em;
+    background: #000000;
+    color: #ffffff; }
+  .website-box ._view-code:hover {
+    box-shadow: 6px 6px 12px 0px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px); }
+
+.list-box {
+  margin-bottom: 4em; }
+  .list-box ._title {
+    font-size: 8em; }
+  .list-box ul {
+    margin: 0;
+    margin-left: 0.2em;
+    padding: 0;
+    list-style: none;
+    font-size: 3em;
+    line-height: 1.5em; }
+
+.hover-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+  z-index: -1;
+  transition: 0.1s; }
+  .hover-img img {
+    width: 100%;
+    height: 100%; }
+
+#contact ._text {
+  font-size: 4em; }
+
+#contact ._button {
+  width: 100%;
+  border: solid 5px #000000;
+  border-radius: 100em;
+  font-size: 3em;
+  text-align: center;
+  padding: .5em 0em;
+  margin: .75em 0em; }
+  #contact ._button:hover {
+    box-shadow: 6px 6px 12px 0px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px); }
+  #contact ._button:active {
+    color: #ffffff;
+    background: #000000; }
+
+#scroll-info {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  background: #ffffff;
+  border-top: solid 2px #000000;
+  cursor: url(img/wave.png), auto; }
+  #scroll-info p {
+    margin: 0;
+    font-size: 8em;
+    transform: translateX(-50%); }
+
+@media screen and (max-width: 1601px), (max-height: 769px) {
+  body {
+    font-size: .75em; } }
+
+@media screen and (max-width: 1025px) {
+  body {
+    font-size: .65em; } }
+
+@media screen and (max-width: 767px) {
+  body {
+    font-size: .5em; }
+  #main-grid {
+    display: initial; }
+  #sidebar {
+    display: none; }
+  #static-spacer {
+    display: none; }
+  #content {
+    height: 100%; }
+  #mobile-only {
+    display: initial; }
+  .about-me {
+    margin-bottom: 1em; }
+  .social {
+    position: initial;
+    margin-bottom: 3em; }
+  .website-box ._title {
+    line-height: 1em;
+    margin-bottom: .25em; }
+  .website-box ._view-web,
+  .website-box ._view-code {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: .75em 0em;
+    text-align: center;
+    margin-bottom: .5em; }
+  .list-box ._title {
+    line-height: 1em;
+    margin-bottom: .5em; }
+  #contact ._text {
+    line-height: 1.2em; }
+  #contact ._button {
+    border: solid 2px #000000; }
+  #scroll-info {
+    display: none; } }
